@@ -1,22 +1,29 @@
 // main.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#define _USE_MATH_DEFINES
 #include <iostream>
-#include "trygonometria.h"
+#include <LaborkaConfig.h>
+
+#ifdef USE_TRIGONOMETRY_DEGREE
+    #include "trygonometria.h"
+#else
+    #include <cmath>
+#endif
+
 
 int main()
 {
-    double sinus = degreemath::sin(30);
-    double cosinus = degreemath::cos(60);
-    double tangens = degreemath::tg(45);
-    double cotangens = degreemath::ctg(45);
+    double result;
 
-    fprintf(stdout, "sin(30) = %g\n", sinus);
-    fprintf(stdout, "cos(60) = %g\n", cosinus);
-    fprintf(stdout, "tg(45) = %g\n", tangens);
-    fprintf(stdout, "ctg(45) = %g\n", cotangens);
-    
-	return 0;
+    #ifdef USE_TRIGONOMETRY_DEGREE
+        result = degreemath::sin(45.0);
+    #else
+        result=sin(M_PI/4.0);
+    #endif
+
+     std::cout << result << std::endl;
+	return result;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
