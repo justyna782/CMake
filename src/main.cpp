@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
+#include "trygonometria.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    double sinus = degreemath::sin(30);
+    double cosinus = degreemath::cos(60);
+    double tangens = degreemath::tg(45);
+    double cotangens = degreemath::ctg(45);
+
+    fprintf(stdout, "sin(30) = %g\n", sinus);
+    fprintf(stdout, "cos(60) = %g\n", cosinus);
+    fprintf(stdout, "tg(45) = %g\n", tangens);
+    fprintf(stdout, "ctg(45) = %g\n", cotangens);
+    
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
