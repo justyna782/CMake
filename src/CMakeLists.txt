@@ -16,3 +16,4 @@ if (USE_TRIGONOMETRY_DEGREE)
   add_subdirectory (Trygonometria)
   target_link_libraries (Laborka  Trygonometria)
 endif (USE_TRIGONOMETRY_DEGREE)
+
