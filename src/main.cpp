@@ -12,12 +12,16 @@
 #endif
 
 
-int main()
+int main(int argc, char* argv[])
 {
     double result;
-
+    double zmienna = 45; 
     #ifdef USE_TRIGONOMETRY_DEGREE
-        result = degreemath::sin(45.0);
+    if (argc >= 2)
+    {
+      zmienna =  strtod(argv[1], NULL);
+    }
+        result = degreemath::sin(zmienna);
     #else
         result=sin(M_PI/4.0);
     #endif
